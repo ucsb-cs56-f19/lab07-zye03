@@ -70,6 +70,14 @@ public class HomePageTest {
     }
 
     @Test
+    public void getHomePage_hasCorrectHomeTitle() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
+                .andExpect(status().isOk())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[1]/a").exists())
+                .andExpect(xpath("/html/body/div/nav/div/ul[1]/li[1]/a").string("Home (current)"));
+    }
+    
+    @Test
     public void getHomePage_hasCorrectPage1Title() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.TEXT_HTML))
                 .andExpect(status().isOk())
