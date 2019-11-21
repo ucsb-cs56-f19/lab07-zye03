@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 
 public class FeatureCollection {
     private static Logger logger = LoggerFactory.getLogger(FeatureCollection.class);
+    public Metadata metadata;
     public String type;
 
     /**
@@ -34,5 +35,5 @@ public class FeatureCollection {
             return null;
         }
     }
-    
+
 }
